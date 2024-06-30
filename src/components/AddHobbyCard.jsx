@@ -22,7 +22,7 @@ function AddHobbyCard() {
 						venue or event tickets? Or, you know someone who should be on
 						hobbycue? Go ahead and Add your Own page
 					</p>
-					<button className="py-[1.2rem] w-[12.1rem] text-center border border-[#8064A2] text-primary rounded-[0.8rem]">
+					<button className="py-[1.2rem] w-[12.1rem] font-semibold text-center border border-[#8064A2] text-primary rounded-[0.8rem]">
 						Add new
 					</button>
 				</div>
