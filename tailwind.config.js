@@ -17,10 +17,11 @@ module.exports = {
 			},
 			textColor: {
 				primary: "#8064A2",
+				secondary: " #0096C8",
 			},
 			borderColor: {
-				primary:"#8064A2",
-			}
+				primary: "#8064A2",
+			},
 		},
 	},
 	plugins: [],
