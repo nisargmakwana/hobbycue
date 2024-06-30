@@ -18,7 +18,7 @@ function Signin() {
 					</p>
 				</div>
 				<div className="grid grid-cols-[1fr_5fr] rounded-[0.8rem] gap-[5.8rem] pl-[2.4rem] py-[1.2rem] border border-[#8064A2]">
-					<img src="/facebook.png" alt="Facebook Icon" className="w-[1.6rem]" />
+					<img src="/face.png" alt="Facebook Icon" className="w-[1.6rem]" />
 					<p className="font-semibold  text-[1.4rem] leading-[1.6rem] text-[#08090A]">
 						Continue with Facebook
 					</p>
