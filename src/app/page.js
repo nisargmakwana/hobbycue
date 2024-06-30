@@ -2,6 +2,7 @@ import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 import AddHobbyCard from "@/components/AddHobbyCard";
 import Testimonials from "@/components/Testimonials";
+import End from "@/components/End";
 export default function Home() {
 	return (
 		<>
@@ -9,6 +10,7 @@ export default function Home() {
 			<Features />
 			<AddHobbyCard />
 			<Testimonials />
+			<End />
 		</>
 	);
 }
