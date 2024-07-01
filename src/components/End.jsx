@@ -9,13 +9,13 @@ const poppins = Poppins({
 function End() {
 	return (
 		<section className={`${poppins.className} bg-[#F7FDFF]`}>
-			<div className="flex flex-col px-[10rem] pt-[10rem] gap-[10rem]">
+			<div className="flex flex-col px-[10rem] max-[1430px]:px-[6rem] pt-[10rem] max-[1430px]:pt-[6rem] gap-[10rem]">
 				<div className="flex flex-col gap-[3rem]">
-					<p className="font-[500] italic text-[3.6rem] leading-[5.4rem] text-black">
+					<p className="font-[500] italic text-[3.6rem] max-[1200px]:text-[3.2rem] leading-[5.4rem] text-black">
 						Your <span className="text-primary">Hobby</span> , Your{" "}
 						<span className="text-secondary">Community...</span>
 					</p>
-					<button className="bg-[#8064A2] h-[4.6rem] items-center w-[14.7rem] text-center py-[1rem] rounded-[0.8rem] font-[500] text-[2rem] leading-[3rem] text-white ">
+					<button className="bg-[#8064A2] h-[4.6rem] items-center w-[14.7rem] text-center py-[1rem] rounded-[0.8rem] font-[500] text-[2rem] max-[1200px]:text-[1.6rem] leading-[3rem] text-white ">
 						Get started
 					</button>
 				</div>

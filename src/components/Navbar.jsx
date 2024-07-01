@@ -1,6 +1,9 @@
-import React from "react";
-import Image from "next/image";
+"use client";
+import React, { useState, useEffect } from "react";
 import { Poppins } from "next/font/google";
+import ExploreList from "./ExploreList";
+import NavRes from "./NavRes";
+import { UseWindowWidth } from "@/hooks/UseWindowWidth";
 
 const poppins = Poppins({
 	weight: ["400", "500", "700"],
@@ -9,29 +12,44 @@ const poppins = Poppins({
 });
 
 function Navbar() {
+	const windowWidth = UseWindowWidth();
+	console.log(windowWidth);
+	if (windowWidth === null) {
+		// While determining the screen width
+		return null;
+	}
+
+	return <>{windowWidth >= 1112 ? <Nav /> : <NavRes />}</>;
+}
+
+const Nav = () => {
+	const [active, setActive] = useState(false);
+	const windowWidth = UseWindowWidth();
+	if (windowWidth === null) {
+		// While determining the screen width
+		return null;
+	}
 	return (
-		<nav className="w-[144rem] h-[8rem] bg-[#FFFFFF] shadow-navbar items-center mt-[0.1rem] ">
-			<div className="flex items-center justify-between mx-[9.7rem]">
-				<div className=" flex items-center justify-between gap-[3.474rem]">
-					<Image
+		<nav className="max-w-[144rem] h-[8rem] bg-[#FFFFFF] shadow-navbar items-center mt-[0.1rem] relative ">
+			{active ? <ExploreList /> : <></>}
+			<div className="flex items-center justify-between mx-[9.7rem] max-[1430px]:mx-[6rem] max-[1250px]:mx-[2rem]">
+				<div className=" flex items-center justify-between gap-[3.474rem] ">
+					<img
 						src="/hobbycue-logo.png"
-						width={293.26}
-						height={60}
 						alt="Hobbycue Logo"
+						className="max-w-[29.326rem] h-auto max-[1356px]:max-w-[24rem]"
 					/>
 					<div
 						className={`flex border border-[#EBEDF0] rounded-[0.8rem] ${poppins.className}`}>
 						<input
 							type="text"
-							className="w-[26rem] h-[4rem] pl-[1.2rem] font-light text-[1.2rem] leading-[1.6rem]"
+							className="w-[26rem] max-[1356px]:w-[20rem] max-[1170px]:w-[15rem] h-[4rem] pl-[1.2rem] font-light text-[1.2rem] leading-[1.6rem] "
 							placeholder="Search here..."
 						/>
-						<Image
+						<img
 							src="/search-icon.png"
-							width={40}
-							height={40}
 							alt="Hobbycue Logo"
-							className=""
+							className="max-w-[4rem] h-[4rem]"
 						/>
 					</div>
 				</div>
@@ -39,60 +57,47 @@ function Navbar() {
 				<div
 					className={`max-w-[52.5rem] h-[4rem] ${poppins.className} flex items-center gap-[1.4rem] ml-[8rem]`}>
 					<div className="flex gap-[0.5rem]">
-						<Image
+						<img
 							src="/explore.png"
-							width={24}
-							height={24}
 							alt="Explore Icon"
-							className=""
+							className="max-w-[2.4rem] h-[2.4rem]"
 						/>
 						<p className="text-[1.4rem] font-[500] leading-[2.2rem]">Explore</p>
-						<Image
+						<img
 							src="/expand-arrow.png"
-							width={24}
-							height={24}
 							alt="Expand Arrow Icon"
-							className=""
+							className="w-[2.4rem] h-[2.4rem]"
+							onClick={() => setActive(!active)}
 						/>
 					</div>
 					<div className="flex gap-[0.5rem]">
-						<Image
+						<img
 							src="/star-1.png"
-							width={24}
-							height={24}
 							alt="Star Icon"
-							className=""
+							className="max-w-[2.4rem] h-[2.4rem]"
 						/>
 						<p className="text-[1.4rem] font-[500] leading-[2.2rem]">Hobbies</p>
-						<Image
+						<img
 							src="/expand-arrow.png"
-							width={24}
-							height={24}
 							alt="Expand Arrow Icon"
-							className=""
+							className="max-w-[2.4rem] h-[2.4rem]"
 						/>
 					</div>
 					<div className="flex gap-[2.4rem] items-center">
-						<Image
+						<img
 							src="/bookmark.png"
-							width={24}
-							height={24}
 							alt="Bookmark Icon"
-							className=""
+							className="max-w-[2.4rem] h-[2.4rem]"
 						/>
-						<Image
+						<img
 							src="/notifications.png"
-							width={24}
-							height={24}
 							alt="Notifications Icon"
-							className=""
+							className="max-w-[2.4rem] h-[2.4rem]"
 						/>
-						<Image
+						<img
 							src="/product-cart.png"
-							width={24}
-							height={24}
 							alt="Product Cart Icon"
-							className=""
+							className="max-w-[2.4rem] h-[2.4rem]"
 						/>
 						<button
 							className={`${poppins.className} font-semibold text-[1.4rem] leading-[1.6rem] text-primary rounded-[0.8rem] border border-primary px-[3.2rem] py-[1rem] `}>
@@ -103,6 +108,5 @@ function Navbar() {
 			</div>
 		</nav>
 	);
-}
-
+};
 export default Navbar;

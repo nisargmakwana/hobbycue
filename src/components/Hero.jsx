@@ -3,6 +3,8 @@ import { useState, React } from "react";
 import Joinin from "./Joinin";
 import Signin from "./Signin";
 import { Poppins } from "next/font/google";
+import HeroRes from "./HeroRes";
+import { UseWindowWidth } from "@/hooks/UseWindowWidth";
 
 const poppins = Poppins({
 	weight: ["400", "500", "700"],
@@ -11,13 +13,23 @@ const poppins = Poppins({
 });
 
 function Hero() {
+	const windowWidth = UseWindowWidth();
+
+	if (windowWidth === null) {
+		// While determining the screen width
+		return null;
+	}
+	return <div>{windowWidth >= 1112 ? <HeroComp /> : <HeroRes />}</div>;
+}
+
+const HeroComp = () => {
 	const [selected, setSelected] = useState("signin");
 	return (
 		<section
-			className={`${poppins.className} max-w-[144rem] w-full h-[67.8rem] text-black`}>
-			<div className="pt-[10rem] px-[10rem] flex gap-[12.3rem]">
-				<div className="max-w-[70.7rem]">
-					<h1 className="font-semibold italic text-[3.6rem] leading-[5.4rem] tracking-[2%]">
+			className={`${poppins.className} max-w-[144rem] w-full h-[67.8rem] text-black bg-[#F7F5F9]`}>
+			<div className="pt-[10rem] px-[10rem] max-[1430px]:px-[6rem] flex max-[1109px]:block gap-[12.3rem] max-[1310px]:gap-[8.3rem] max-[1250px]:px-[2rem]">
+				<div className="max-w-[70.7rem] max-[1200px]:max-w-[65rem]">
+					<h1 className="font-semibold italic text-[3.6rem] max-[1200px]:text-[3.2rem] leading-[5.4rem] tracking-[2%]">
 						Explore your <span className="text-secondary">hobby</span> or{" "}
 						<span className="text-primary">passion</span>{" "}
 					</h1>
@@ -69,5 +81,5 @@ function Hero() {
 			</div>
 		</section>
 	);
-}
+};
 export default Hero;

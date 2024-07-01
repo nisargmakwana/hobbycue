@@ -11,8 +11,8 @@ function Footer() {
 		<>
 			<section
 				className={`${poppins.className} text-[#08090A] text-[1.4rem] leading-[1.8rem] tracking-[0.5%]`}>
-				<div className="flex gap-[19rem] bg-white px-[10rem] py-[6rem]">
-					<ul className="flex flex-col gap-[0.8rem]">
+				<div className="flex max-[1050px]:block max-[1050px]:text-left gap-[19rem] max-[1310px]:gap-[13rem] bg-white px-[10rem] max-[768px]:px-[5rem] py-[6rem]">
+					<ul className="flex flex-col gap-[0.8rem] max-[1050px]:mb-[4.2rem]">
 						<li className="font-bold mb-[1.2rem]">Hobbycue</li>
 						<li className="hover:text-primary ">About us</li>
 						<li className="hover:text-primary ">Our Services</li>
@@ -20,7 +20,7 @@ function Footer() {
 						<li className="hover:text-primary ">FAQ</li>
 						<li className="hover:text-primary">Contact Us</li>
 					</ul>
-					<ul className="flex flex-col gap-[0.8rem]">
+					<ul className="flex flex-col gap-[0.8rem] max-[1050px]:mb-[4.2rem]">
 						<li className="font-bold mb-[1.2rem]">How Do I</li>
 						<li className="hover:text-primary">Sign Up</li>
 						<li className="hover:text-primary">Add a Listing</li>
@@ -29,7 +29,7 @@ function Footer() {
 						<li className="hover:text-primary">Add a Blog Post</li>
 						<li className="hover:text-primary">Other Queries</li>
 					</ul>
-					<ul className="flex flex-col gap-[0.8rem]">
+					<ul className="flex flex-col gap-[0.8rem] max-[1050px]:mb-[4.2rem]">
 						<li className="font-bold mb-[1.2rem]">Quick Links</li>
 						<li className="hover:text-primary">Sign Up</li>
 						<li className="hover:text-primary">Listings</li>
@@ -42,15 +42,35 @@ function Footer() {
 							<p className="font-bold text-[1.4rem] leading-[1.8rem] tracking-[0.5%] text-[#08090A]">
 								Social Media
 							</p>
-							<div className="flex items-center gap-[2.4rem]">
-								<img src="facebook.png" alt="Facebook Icon" />
-								<img src="twitter.png" alt="Twitter Icon" />
-								<img src="instagram.png" alt="Instagram Icon" />
-								<img src="pinterest.png" alt="Pinterest Icon" />
-								<img src="googleplus.png" alt="Googleplus Icon" />
-								<img src="youtube.png" alt="Youtube Icon" />
-								<img src="telegram.png" alt="Telegram Icon" />
-								<img src="email.png" alt="Email Icon" />
+							<div className="flex items-center gap-[2.4rem] max-[1310px]:gap-[1rem] max-[1050px]:block ">
+								<img
+									src="facebook.png"
+									alt="Facebook Icon"
+									className="inline max-[1050px]:mr-[1rem]"
+								/>
+								<img src="twitter.png" alt="Twitter Icon" className="inline" />
+								<img
+									src="instagram.png"
+									alt="Instagram Icon"
+									className="inline max-[1050px]:mr-[1rem]"
+								/>
+								<img
+									src="pinterest.png"
+									alt="Pinterest Icon"
+									className="inline max-[1050px]:mr-[1rem]"
+								/>
+								<img
+									src="googleplus.png"
+									alt="Googleplus Icon"
+									className="inline max-[1050px]:mr-[1rem]"
+								/>
+								<img src="youtube.png" alt="Youtube Icon" className="inline" />
+								<img
+									src="telegram.png"
+									alt="Telegram Icon"
+									className="inline max-[1050px]:mr-[1rem]"
+								/>
+								<img src="email.png" alt="Email Icon" className="inline" />
 							</div>
 						</div>
 						<div className="flex flex-col gap-[1.6rem]">

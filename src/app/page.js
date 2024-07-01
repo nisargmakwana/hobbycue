@@ -4,6 +4,7 @@ import AddHobbyCard from "@/components/AddHobbyCard";
 import Testimonials from "@/components/Testimonials";
 import End from "@/components/End";
 import Footer from "@/components/Footer";
+
 export default function Home() {
 	return (
 		<>
